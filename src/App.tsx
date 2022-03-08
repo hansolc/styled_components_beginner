@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
-import Circle from './Circle';
+import Router from '../coin_tracker/src/Router';
 
 /* keywords
 1. styled(): 다른 컴포넌트의 속성 값을 재 사용해야 할 경우
@@ -13,26 +13,9 @@ import Circle from './Circle';
 */
 
 function App() {
-  const [value, setValue] = useState("")
-  const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
-      const { currentTarget: {value: value }} = event;
-      setValue(value);
-  }
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    const { currentTarget } = event;
-    event.preventDefault();
-    
-  }
-
-   return (
-     <div>
-       <form onSubmit={handleSubmit}>
-         <input onChange={handleChange}></input>
-         <button>onclick</button>
-       </form>
-     </div>
-   )
+  return (
+    <Router/>
+  )
 }
 
 export default App;
